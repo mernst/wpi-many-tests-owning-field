@@ -24,7 +24,7 @@ dependencies {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    if (JavaVersion.current() == JavaVersion.VERSION_16) {
+    if (JavaVersion.current() >= JavaVersion.VERSION_16) {
         options.fork = true
         options.forkOptions.jvmArgs += [
                 "--add-opens", "jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
