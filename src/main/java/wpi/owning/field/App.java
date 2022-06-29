@@ -1,9 +1,9 @@
 package wpi.owning.field;
 
 import org.checkerframework.checker.calledmethods.qual.EnsuresCalledMethods;
-import org.checkerframework.checker.mustcall.qual.MustCall;
+import org.checkerframework.checker.mustcall.qual.InheritableMustCall;
 
-@MustCall("finalizer") class App {
+@InheritableMustCall("finalizer") class App {
     private final Foo checkFieldsFoo;
 
     public App() {
@@ -17,7 +17,7 @@ import org.checkerframework.checker.mustcall.qual.MustCall;
         this.checkFieldsFoo.a();
     }
 
-    @MustCall("a") static class Foo {
+    @InheritableMustCall("a") static class Foo {
         void a() {}
 
         void c() {}
@@ -27,7 +27,7 @@ import org.checkerframework.checker.mustcall.qual.MustCall;
         return new Foo();
     }
 
-    @MustCall("b") static class FooField {
+    @InheritableMustCall("b") static class FooField {
         private final Foo finalOwningFoo;
 
         public FooField() {
