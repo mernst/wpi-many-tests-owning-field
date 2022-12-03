@@ -1,5 +1,6 @@
 #
 # https://help.github.com/articles/dealing-with-line-endings/
 #
-# These are explicitly windows files and should use crlf
+# These are explicitly Windows files.
+# They have line feeds in the repository, but crlf in the working tree.
 *.bat           text eol=crlf
